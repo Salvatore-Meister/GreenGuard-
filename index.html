@@ -46,7 +46,7 @@
 </head>
 <body class="h-full flex flex-col bg-gradient-to-br from-eco-950 via-eco-900 to-emerald-950 text-eco-50">
 
-    <!-- Onboarding Modal (Wird nur beim ersten Mal gezeigt) -->
+    <!-- Onboarding Modal -->
     <div id="onboarding-modal" class="fixed inset-0 bg-eco-950/95 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
         <div class="glass max-w-md w-full rounded-3xl p-8 shadow-2xl border border-eco-500/40 text-center">
             <div class="w-16 h-16 bg-gradient-to-tr from-eco-600 to-emerald-400 rounded-3xl mx-auto flex items-center justify-center text-white text-2xl shadow-lg mb-4">
@@ -74,9 +74,9 @@
                 <p class="text-xs text-eco-300">Dein gesundes Zuhause · <span id="community-points-header" class="font-semibold text-emerald-300">0 Community-Punkte</span></p>
             </div>
         </div>
-        <button onclick="openModal()" class="bg-gradient-to-r from-eco-600 to-emerald-500 text-white text-xs font-semibold px-4 py-2 rounded-xl shadow-lg cursor-pointer">
-            <i class="fa-solid fa-video"></i> Community & Video
-        </button>
+        <a href="https://www.tiktok.com/@greenguard_official?_r=1&_t=ZG-9BeJJm1xUkC" target="_blank" rel="noopener noreferrer" onclick="awardCommunityPoints(5, 'TikTok-Profil geöffnet')" class="bg-gradient-to-r from-eco-600 to-emerald-500 text-white text-xs font-semibold px-4 py-2 rounded-xl shadow-lg">
+            <i class="fa-brands fa-tiktok"></i> @greenguard_official
+        </a>
     </header>
 
     <!-- Main Content -->
@@ -87,16 +87,15 @@
             <!-- 9:16 Willkommens- & Visions-Video Banner -->
             <div class="glass rounded-3xl p-6 shadow-2xl border-emerald-500/30 relative overflow-hidden flex flex-col sm:flex-row items-center gap-6">
                 <div class="w-full sm:w-1/3 aspect-[9/16] max-h-64 bg-eco-950/80 rounded-2xl border border-eco-500/40 overflow-hidden shadow-inner">
-    <video
-        src="./lv_0_20261123175308.mp4" https:
-        controls
-        playsinline
-        preload="metadata"
-        onplay="awardCommunityPointsOnce('video_intro', 5, 'Intro-Video gestartet')"
-        class="w-full h-full object-cover">
-    </video>
+                    <video
+                        src="./lv_0_2026112317530.mp4"
+                        controls
+                        playsinline
+                        preload="metadata"
+                        onplay="awardCommunityPointsOnce('video_intro', 5, 'Intro-Video gestartet')"
+                        class="w-full h-full object-cover">
+                    </video>
                 </div>
-                
                 <div class="flex-1 text-center sm:text-left">
                     <span class="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full border border-emerald-500/30">Vision & Auftakt</span>
                     <h3 class="text-lg font-bold text-white mt-2">Das atmende Ökosystem</h3>
@@ -104,8 +103,8 @@
                         Entdecke, wie du mit Pflanzen, Kräutern und kleinen täglichen Routinen Balkon und Wohnung belebst, Community-Punkte sammelst und Schritt für Schritt dein grünes Zuhause aufbaust.
                     </p>
                     <a href="https://www.tiktok.com/@greenguard_official?_r=1&_t=ZG-9BeJJm1xUkC" target="_blank" rel="noopener noreferrer" onclick="awardCommunityPoints(5, 'TikTok-Profil geöffnet')" class="mt-4 inline-block bg-gradient-to-r from-eco-600 to-emerald-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-lg">
-    📺 Auf TikTok ansehen (+5 Pkt)
-</a>
+                        📺 Auf TikTok ansehen (+5 Pkt)
+                    </a>
                 </div>
             </div>
 
@@ -143,6 +142,201 @@
                     <div class="p-2 rounded-xl bg-eco-900/40">
                         <div class="text-xs text-eco-400">Habits</div>
                         <div id="stat-habits" class="text-sm font-bold text-white">0 / 5</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================================= -->
+            <!-- NEU: DIE 4 INTERAKTIVEN GREEN-GUARD HELFER + 10s VIDEOS   -->
+            <!-- ========================================================= -->
+            <div class="glass rounded-3xl p-6 shadow-2xl border-emerald-500/30 space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">Interaktive Praxis-Tools</span>
+                        <h3 class="text-lg font-bold text-white mt-1">GreenGuard Helfer & Schnell-Rechner</h3>
+                    </div>
+                    <span class="text-[10px] text-emerald-300 bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-700/50">Werbung · Affiliate-Links</span>
+                </div>
+
+                <!-- 1. UMTOPF- & ERD-RECHNER (Video 3: Tomaten / Blätter hängen) -->
+                <div class="p-4 rounded-2xl bg-eco-950/60 border border-eco-800/60 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                    <div class="sm:col-span-4">
+                        <video
+                            src="./gemini_generated_video_8fb27891.mp4"
+                            controls
+                            playsinline
+                            preload="metadata"
+                            onplay="awardCommunityPointsOnce('video_umtopfen', 10, 'Umtopf-Clip abgespielt')"
+                            class="w-full aspect-[9/16] max-h-56 mx-auto rounded-xl bg-black/50 object-cover">
+                        </video>
+                    </div>
+                    <div class="sm:col-span-8 space-y-3 text-xs">
+                        <div>
+                            <span class="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full">Rechner #1</span>
+                            <h4 class="text-base font-bold text-white mt-1">🪴 Umtopf- & Erd-Rechner</h4>
+                            <p class="text-eco-300 mt-0.5">Blätter hängen oder die Erde ist ausgelaugt? Berechne Erdbedarf & Wechselzeitpunkt:</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                            <div>
+                                <label class="block text-[11px] text-eco-300 mb-1">Pflanzenart</label>
+                                <select id="repot-plant" onchange="calculateRepot()" class="w-full bg-eco-900/90 border border-eco-700 text-white rounded-xl p-2 text-xs">
+                                    <option value="tomaten">Tomaten / Gemüse</option>
+                                    <option value="kraeuter">Kräuter (Basilikum & Co.)</option>
+                                    <option value="zimmer">Zimmerpflanze</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-[11px] text-eco-300 mb-1">Topfgröße</label>
+                                <select id="repot-pot" onchange="calculateRepot()" class="w-full bg-eco-900/90 border border-eco-700 text-white rounded-xl p-2 text-xs">
+                                    <option value="2">Klein (Ø 15 cm · ca. 2 L)</option>
+                                    <option value="5" selected>Mittel (Ø 22 cm · ca. 5 L)</option>
+                                    <option value="12">Groß / Kübel (Ø 30 cm · ca. 12 L)</option>
+                                    <option value="18">Balkonkasten (80 cm · ca. 18 L)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-[11px] text-eco-300 mb-1">Letzter Wechsel</label>
+                                <select id="repot-age" onchange="calculateRepot()" class="w-full bg-eco-900/90 border border-eco-700 text-white rounded-xl p-2 text-xs">
+                                    <option value="neu">Vor unter 6 Monaten</option>
+                                    <option value="halb">Vor 6–12 Monaten</option>
+                                    <option value="jahr" selected>Über 1 Jahr her</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="repot-result" class="p-3 rounded-xl bg-eco-900/60 border border-emerald-500/30 text-eco-100 leading-relaxed">
+                            <!-- Wird per JS gefüllt -->
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            <a id="repot-amazon-erde" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'bio gemuese und kraeutererde torffrei')" class="inline-block bg-eco-700 hover:bg-eco-600 text-white font-semibold px-3 py-2 rounded-xl">
+                                🛒 Passende Bio-Erde* (+5 Pkt)
+                            </a>
+                            <a id="repot-amazon-topf" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'pflanztopf mit wasserablauf und untersetzer')" class="inline-block bg-eco-800 hover:bg-eco-700 text-white font-semibold px-3 py-2 rounded-xl">
+                                🪴 Pflanztopf & Untersetzer* (+5 Pkt)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. NOTFALL-HELFER (Video 2: Mücken / Trockene Erde / Hängende Blätter) -->
+                <div class="p-4 rounded-2xl bg-eco-950/60 border border-eco-800/60 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                    <div class="sm:col-span-4">
+                        <video
+                            src="./gemini_generated_video_c9436219.mp4"
+                            controls
+                            playsinline
+                            preload="metadata"
+                            onplay="awardCommunityPointsOnce('video_muecken', 10, 'Notfall-Clip abgespielt')"
+                            class="w-full aspect-[9/16] max-h-56 mx-auto rounded-xl bg-black/50 object-cover">
+                        </video>
+                    </div>
+                    <div class="sm:col-span-8 space-y-3 text-xs">
+                        <div>
+                            <span class="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full">Soforthilfe #2</span>
+                            <h4 class="text-base font-bold text-white mt-1">🚑 Pflanzen-Notfallhelfer</h4>
+                            <p class="text-eco-300 mt-0.5">Wähle das Symptom aus – du bekommst sofort die passende Lösung & Hilfsmittel:</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-1.5">
+                            <button onclick="selectEmergency('muecken')" class="bg-eco-800 hover:bg-eco-700 text-white px-2.5 py-1.5 rounded-xl font-semibold cursor-pointer">🦟 Trauermücken</button>
+                            <button onclick="selectEmergency('trocken')" class="bg-eco-800 hover:bg-eco-700 text-white px-2.5 py-1.5 rounded-xl font-semibold cursor-pointer">🏜️ Trockene / harte Erde</button>
+                            <button onclick="selectEmergency('haengend')" class="bg-eco-800 hover:bg-eco-700 text-white px-2.5 py-1.5 rounded-xl font-semibold cursor-pointer">🥀 Hängende Blätter</button>
+                            <button onclick="selectEmergency('gelb')" class="bg-eco-800 hover:bg-eco-700 text-white px-2.5 py-1.5 rounded-xl font-semibold cursor-pointer">🍂 Gelbe Blätter / Staunässe</button>
+                        </div>
+
+                        <div id="emergency-result" class="p-3 rounded-xl bg-eco-900/60 border border-emerald-500/30 text-eco-100 leading-relaxed">
+                            <!-- Wird per JS gefüllt -->
+                        </div>
+
+                        <div>
+                            <a id="emergency-amazon-link" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'gelbtafeln trauermuecken und neemoel')" class="inline-block bg-eco-700 hover:bg-eco-600 text-white font-semibold px-3.5 py-2 rounded-xl">
+                                🛒 Passendes Hilfsmittel auf Amazon* (+5 Pkt)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- 3. PFLANZEN-, SAMEN- & ERD-EMPFEHLUNG (Video 1: Samen) -->
+                <div class="p-4 rounded-2xl bg-eco-950/60 border border-eco-800/60 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                    <div class="sm:col-span-4">
+                        <video
+                            src="./gemini_generated_video_7829bffe.mp4"
+                            controls
+                            playsinline
+                            preload="metadata"
+                            onplay="awardCommunityPointsOnce('video_samen', 10, 'Samen-Clip abgespielt')"
+                            class="w-full aspect-[9/16] max-h-56 mx-auto rounded-xl bg-black/50 object-cover">
+                        </video>
+                    </div>
+                    <div class="sm:col-span-8 space-y-3 text-xs">
+                        <div>
+                            <span class="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full">Berater #3</span>
+                            <h4 class="text-base font-bold text-white mt-1">🌱 Pflanzen-, Samen- & Erd-Empfehlung</h4>
+                            <p class="text-eco-300 mt-0.5">Wähle deinen Platz – wir zeigen dir passende Samen, Pflanzen & die richtige Erde:</p>
+                        </div>
+
+                        <div>
+                            <select id="seed-spot" onchange="updateSeedRecommendation()" class="w-full bg-eco-900/90 border border-eco-700 text-white rounded-xl p-2.5 text-xs">
+                                <option value="balkon_sonne">☀️ Sonniger Balkon (Tomaten, Basilikum, Rosmarin)</option>
+                                <option value="balkon_schatten">🌤️ Halbschattiger Balkon (Minze, Petersilie, Schnittlauch)</option>
+                                <option value="kueche">🪟 Helle Küchenfensterbank (Kräuter-Trio & Sprossen)</option>
+                                <option value="wohnzimmer">🛋️ Wohnzimmer / Raumklima (Grünpflanzen & Luftbegleiter)</option>
+                            </select>
+                        </div>
+
+                        <div id="seed-result" class="p-3 rounded-xl bg-eco-900/60 border border-emerald-500/30 text-eco-100 leading-relaxed">
+                            <!-- Wird per JS gefüllt -->
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            <a id="seed-amazon-samen" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'bio kraeuter und gemuese samen set')" class="inline-block bg-eco-700 hover:bg-eco-600 text-white font-semibold px-3 py-2 rounded-xl">
+                                🌱 Bio-Samen Set* (+5 Pkt)
+                            </a>
+                            <a id="seed-amazon-erde" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'bio anzuchterde und kokosquelltabs')" class="inline-block bg-eco-800 hover:bg-eco-700 text-white font-semibold px-3 py-2 rounded-xl">
+                                🪴 Anzuchterde & Zubehör* (+5 Pkt)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. URLAUBSSITTER & GIESSPLAN (Video 4: Urlaubssitter) -->
+                <div class="p-4 rounded-2xl bg-eco-950/60 border border-eco-800/60 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                    <div class="sm:col-span-4">
+                        <video
+                            src="./gemini_generated_video_6c814ab6.mp4"
+                            controls
+                            playsinline
+                            preload="metadata"
+                            onplay="awardCommunityPointsOnce('video_urlaub', 10, 'Urlaubssitter-Clip abgespielt')"
+                            class="w-full aspect-[9/16] max-h-56 mx-auto rounded-xl bg-black/50 object-cover">
+                        </video>
+                    </div>
+                    <div class="sm:col-span-8 space-y-3 text-xs">
+                        <div>
+                            <span class="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full">Urlaubsmodus #4</span>
+                            <h4 class="text-base font-bold text-white mt-1">🧳 Urlaubssitter & Gießplan-Generator</h4>
+                            <p class="text-eco-300 mt-0.5">Erstelle mit einem Klick einen klaren Gießplan zum Kopieren für Freunde oder Nachbarn:</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <input type="text" id="sitter-days" placeholder="Reisedauer (z. B. 7 Tage)" class="bg-eco-900/90 border border-eco-700 text-white rounded-xl p-2 text-xs">
+                            <input type="text" id="sitter-plants" placeholder="Pflanzen (z. B. Monstera, Basilikum)" class="bg-eco-900/90 border border-eco-700 text-white rounded-xl p-2 text-xs">
+                        </div>
+
+                        <div id="sitter-plan-box" class="p-3 rounded-xl bg-eco-900/60 border border-emerald-500/30 text-eco-100 leading-relaxed whitespace-pre-line">
+                            <!-- Wird per JS gefüllt -->
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="generateAndCopySitterPlan()" class="bg-eco-600 hover:bg-eco-500 text-white font-semibold px-3.5 py-2 rounded-xl cursor-pointer">
+                                📋 Gießplan erstellen & kopieren (+10 Pkt)
+                            </button>
+                            <a data-amazon-query="tonkegel bewaesserung urlaub pflanzen" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'tonkegel bewaesserung urlaub pflanzen')" class="inline-block bg-eco-800 hover:bg-eco-700 text-white font-semibold px-3 py-2 rounded-xl">
+                                💧 Urlaubs-Bewässerung* (+5 Pkt)
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -188,8 +382,7 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Balkon, Wohnung, Kräuter & Pflege-Guides -->
+             <!-- Balkon, Wohnung, Kräuter & Pflege-Guides -->
             <div class="glass rounded-3xl p-6 shadow-2xl border-emerald-500/30">
                 <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
                     <div>
@@ -247,86 +440,7 @@
                 </div>
             </div>
 
-            <!-- 9:16 Erklärvideos (Direkt eingebunden aus deinem GitHub-Repo) -->
-            <div class="glass rounded-3xl p-6 shadow-2xl border-emerald-500/30">
-                <span class="text-[10px] uppercase tracking-wider text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">Kurz-Clips (9:16)</span>
-                <h3 class="text-lg font-bold text-white mt-1 mb-3">Erklärvideos für Balkon, Wohnung & Pflanzen</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-
-                    <!-- 1. Balkon -->
-                    <div class="p-3.5 rounded-2xl bg-eco-950/60 border border-eco-800/60 flex flex-col justify-between">
-                        <div>
-                            <div class="font-bold text-white mb-2">1. Balkon in Ruhe gestalten</div>
-                            <video
-                                src="./gemini_generated_video_d7159e47.mp4"
-                                controls
-                                playsinline
-                                preload="metadata"
-                                onplay="awardCommunityPointsOnce('video_balkon', 10, 'Balkon-Clip abgespielt')"
-                                class="w-full aspect-[9/16] rounded-xl bg-black/50 object-cover">
-                            </video>
-                            <p class="text-eco-300 mt-2 text-[11px]">Ideen für kleine Flächen, Sitzplatz & grüne Akzente.</p>
-                        </div>
-                    </div>
- <!-- Balkon, Wohnung, Kräuter & Pflege-Guides -->
-            <div class="glass rounded-3xl p-6 shadow-2xl border-emerald-500/30">
-                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-                    <div>
-                        <span class="text-[10px] uppercase tracking-wider text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">Wissen & Pflege</span>
-                        <h3 class="text-lg font-bold text-white mt-1">Balkon, Wohnung & Kräuter im Überblick</h3>
-                    </div>
-                    <span id="guide-feedback" class="text-xs text-emerald-300 font-medium"></span>
-                </div>
-
-                <div class="space-y-3 text-xs">
-                    <div class="p-4 rounded-2xl bg-eco-950/60 border border-eco-800/60">
-                        <div class="flex items-center justify-between gap-2">
-                            <h4 class="font-bold text-white text-sm">🌿 Kräuter & Balkon verschönern</h4>
-                            <button onclick="completeGuide('kraeuter', 15)" class="bg-eco-700 hover:bg-eco-600 text-white px-3 py-1.5 rounded-xl font-semibold cursor-pointer">
-                                Gelesen (+15 Pkt)
-                            </button>
-                        </div>
-                        <p class="text-eco-200 mt-2 leading-relaxed">
-                            <strong>Nutzen:</strong> Rosmarin, Thymian, Minze und Basilikum bringen Duft, Ruhe und frische Aromen direkt in deinen Alltag. <strong>Worauf achten:</strong> Genug Licht, Abflusslöcher im Topf und Triebspitzen regelmäßig ernten, statt Blüten zu schnell stehen zu lassen.
-                        </p>
-                        <a data-amazon-query="balkon kraeuter pflanzkasten" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'balkon kraeuter pflanzkasten')" class="mt-2 inline-block text-emerald-300 hover:text-emerald-200 underline">
-                            Passendes Zubehör auf Amazon ansehen* (Werbung)
-                        </a>
-                    </div>
-
-                    <div class="p-4 rounded-2xl bg-eco-950/60 border border-eco-800/60">
-                        <div class="flex items-center justify-between gap-2">
-                            <h4 class="font-bold text-white text-sm">🏡 Wohnung gestalten & Raumgefühl</h4>
-                            <button onclick="completeGuide('wohnung', 15)" class="bg-eco-700 hover:bg-eco-600 text-white px-3 py-1.5 rounded-xl font-semibold cursor-pointer">
-                                Gelesen (+15 Pkt)
-                            </button>
-                        </div>
-                        <p class="text-eco-200 mt-2 leading-relaxed">
-                            <strong>Nutzen:</strong> Grüne Ecken und warme Lichtquellen beruhigen den Blick und machen Räume wohnlicher. <strong>Worauf achten:</strong> Pflanzen passend zum Licht (hell, Halbschatten oder schattiger) stellen und nicht direkt neben heiße Heizkörper oder kalte Zugluft quetschen.
-                        </p>
-                        <a data-amazon-query="zimmerpflanzen ständer warmweiss" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'zimmerpflanzen ständer warmweiss')" class="mt-2 inline-block text-emerald-300 hover:text-emerald-200 underline">
-                            Passende Wohn-Ideen auf Amazon ansehen* (Werbung)
-                        </a>
-                    </div>
-
-                    <div class="p-4 rounded-2xl bg-eco-950/60 border border-eco-800/60">
-                        <div class="flex items-center justify-between gap-2">
-                            <h4 class="font-bold text-white text-sm">💧 Pflege-Check: Gießen, Erde & Licht</h4>
-                            <button onclick="completeGuide('pflege', 15)" class="bg-eco-700 hover:bg-eco-600 text-white px-3 py-1.5 rounded-xl font-semibold cursor-pointer">
-                                Gelesen (+15 Pkt)
-                            </button>
-                        </div>
-                        <p class="text-eco-200 mt-2 leading-relaxed">
-                            <strong>Worauf achten:</strong> Zu viel Wasser ist im Topf häufiger ein Problem als ein kurzer trockener Moment – immer Fingerprobe in der Erde machen, Überschusswasser aus dem Untersetzer gießen und Staub von Blättern wischen, damit sie Licht aufnehmen können.
-                        </p>
-                        <a data-amazon-query="giesskanne schmaler ausguss" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'giesskanne schmaler ausguss')" class="mt-2 inline-block text-emerald-300 hover:text-emerald-200 underline">
-                            Pflege-Helfer auf Amazon ansehen* (Werbung)
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 9:16 Erklärvideos (Direkt eingebunden aus deinem GitHub-Repo) -->
+            <!-- 9:16 Erklärvideos (Balkon, Wohnung & Kräuter) -->
             <div class="glass rounded-3xl p-6 shadow-2xl border-emerald-500/30">
                 <span class="text-[10px] uppercase tracking-wider text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">Kurz-Clips (9:16)</span>
                 <h3 class="text-lg font-bold text-white mt-1 mb-3">Erklärvideos für Balkon, Wohnung & Pflanzen</h3>
@@ -396,8 +510,7 @@
                     </div>
                     <div id="habit-list" class="space-y-3"></div>
                 </div>
-
-                <!-- Community-Fortschritt & Hinweis -->
+                  <!-- Community-Fortschritt & Hinweis -->
                 <div class="mt-6 pt-4 border-t border-eco-800/50 space-y-3">
                     <div class="p-4 rounded-2xl bg-eco-950/70 border border-emerald-500/30">
                         <div class="flex items-center justify-between text-xs mb-1">
@@ -418,22 +531,7 @@
         </section>
     </main>
 
-    <!-- Community & Video Modal -->
-    <div id="reward-modal" class="fixed inset-0 bg-eco-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="glass max-w-md w-full rounded-3xl p-6 shadow-2xl text-center relative">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-eco-300 hover:text-white text-lg cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
-            <div class="w-14 h-14 bg-gradient-to-tr from-eco-600 to-emerald-400 rounded-2xl mx-auto flex items-center justify-center text-white text-xl shadow-lg mb-3">
-                <i class="fa-solid fa-video"></i>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Community & Video-Challenge</h3>
-            <p class="text-xs text-eco-200 mb-4 leading-relaxed">
-                Zeige deinen Balkon, deine Wohnung oder deine Pflanzen & Kräuter auf TikTok oder YouTube!
-                <br><strong class="text-emerald-300">Anti-Schummel-Regel:</strong> Lege unbedingt einen handgeschriebenen Zettel mit deinem Nickname und dem aktuellen Datum zu deiner Pflanze, um am Gewinnspiel teilzunehmen!
-            </p>
-            <button onclick="closeModal()" class="w-full bg-eco-600 text-white py-3 rounded-xl text-sm font-semibold cursor-pointer">Verstanden! ❤️</button>
-        </div>
-    </div>
-     <!-- Script Logic -->
+    <!-- Script Logic -->
     <script>
         const AMAZON_TAG = 'greenguard21-21';
 
@@ -552,6 +650,152 @@
                 if (nextText) nextText.innerText = `Noch ${remaining} Punkte bis Level ${info.level + 1} (${info.nextTitle})`;
             }
         }
+        // --- 1. UMTOPF- & ERD-RECHNER ---
+        function calculateRepot() {
+            const plant = document.getElementById('repot-plant').value;
+            const liters = parseInt(document.getElementById('repot-pot').value, 10);
+            const age = document.getElementById('repot-age').value;
+            const resultBox = document.getElementById('repot-result');
+            const erdeLink = document.getElementById('repot-amazon-erde');
+
+            let timing = '';
+            if (age === 'jahr') {
+                timing = 'Jetzt wechseln: Nach rund 1 Jahr ist die Erde meist ausgelaugt und verdichtet.';
+            } else if (age === 'halb') {
+                timing = 'Bald prüfen: Bei Starkzehrern (z. B. Tomaten) demnächst auffrischen oder nachdüngen.';
+            } else {
+                timing = 'Erde ist noch frisch – erst umtopfen, wenn Wurzeln unten herauswachsen.';
+            }
+
+            let earthQuery = 'bio blumenerde torffrei';
+            let earthHint = 'Universelle Bio-Erde';
+            if (plant === 'tomaten') {
+                earthQuery = 'bio gemuese und tomatenerde torffrei';
+                earthHint = 'Nährstoffreiche Bio-Tomaten- & Gemüseerde';
+            } else if (plant === 'kraeuter') {
+                earthQuery = 'bio kraeutererde torffrei';
+                earthHint = 'Lockere Bio-Kräutererde';
+            }
+
+            const recommendedBag = liters <= 5 ? '5–10 Liter Sack' : liters <= 12 ? '15–20 Liter Sack' : '20–40 Liter Sack';
+
+            resultBox.innerHTML = `
+                <strong>Erdbedarf:</strong> ca. <strong>${liters} Liter</strong> (${recommendedBag}) · <strong>Empfehlung:</strong> ${earthHint}.<br>
+                <strong>Wechsel-Check:</strong> ${timing}
+            `;
+
+            if (erdeLink) {
+                erdeLink.href = buildAmazonLink(earthQuery);
+                erdeLink.onclick = (e) => handleAffiliateClick(e, earthQuery);
+            }
+        }
+
+        // --- 2. NOTFALL-HELFER ---
+        function selectEmergency(type) {
+            const box = document.getElementById('emergency-result');
+            const link = document.getElementById('emergency-amazon-link');
+
+            const guides = {
+                muecken: {
+                    title: '🦟 Trauermücken an der Erde',
+                    text: '1. Gelbtafeln direkt in die Erde stecken, um fliegende Mücken abzufangen. 2. Obere Erdschicht antrocknen lassen und bei Bedarf mit Neemöl-Lösung gießen.',
+                    query: 'gelbtafeln trauermuecken und neemoel pflanzen',
+                    btn: '🛒 Gelbtafeln & Neemöl* (+5 Pkt)'
+                },
+                trocken: {
+                    title: '🏜️ Trockene, verhärtete Erde',
+                    text: '1. Topf für 15–20 Minuten in ein Wasserbad stellen, damit sich der Ballen von unten vollsaugt. 2. Danach gut abtropfen lassen und Erde oben leicht auflockern.',
+                    query: 'bodenfeuchtigkeitsmesser und giesskanne',
+                    btn: '🛒 Gießanzeiger & Gießkanne* (+5 Pkt)'
+                },
+                haengend: {
+                    title: '🥀 Hängende Blätter trotz Gießen',
+                    text: '1. Prüfen, ob die Erde nach über einem Jahr ausgelaugt oder komplett durchwurzelt ist. 2. In frische, lockere Bio-Erde umtopfen und hell (ohne pralle Mittagshitze) stellen.',
+                    query: 'bio blumenerde torffrei und pflanztopf',
+                    btn: '🛒 Frische Bio-Erde & Topf* (+5 Pkt)'
+                },
+                gelb: {
+                    title: '🍂 Gelbe Blätter / Verdacht auf Staunässe',
+                    text: '1. Sofort Überschusswasser aus dem Übertopf/Untersetzer abgießen. 2. Wurzeln prüfen und erst wieder gießen, wenn die oberen 2–3 cm der Erde trocken sind.',
+                    query: 'blaehton drainage pflanzen und feuchtigkeitsmesser',
+                    btn: '🛒 Drainage-Blähton & Messer* (+5 Pkt)'
+                }
+            };
+
+            const item = guides[type] || guides.muecken;
+            box.innerHTML = `<strong>${item.title}:</strong><br>${item.text}`;
+            if (link) {
+                link.href = buildAmazonLink(item.query);
+                link.innerText = item.btn;
+                link.onclick = (e) => handleAffiliateClick(e, item.query);
+            }
+        }
+
+        // --- 3. PFLANZEN-, SAMEN- & ERD-EMPFEHLUNG ---
+        function updateSeedRecommendation() {
+            const spot = document.getElementById('seed-spot').value;
+            const box = document.getElementById('seed-result');
+            const samenLink = document.getElementById('seed-amazon-samen');
+            const erdeLink = document.getElementById('seed-amazon-erde');
+
+            const spots = {
+                balkon_sonne: {
+                    text: '<strong>Ideal:</strong> Buschtomaten, Basilikum, Rosmarin & Thymian. <strong>Erde:</strong> Nährstoffreiche Bio-Gemüse- & Kräutererde mit Wasserablauf.',
+                    samenQuery: 'bio tomaten und basilikum samen set',
+                    erdeQuery: 'bio gemuese und kraeutererde torffrei'
+                },
+                balkon_schatten: {
+                    text: '<strong>Ideal:</strong> Minze, Petersilie, Schnittlauch & Waldmeister. <strong>Erde:</strong> Lockere Bio-Kräutererde, gleichmäßig leicht feucht halten.',
+                    samenQuery: 'bio kraeuter samen set minze petersilie schnittlauch',
+                    erdeQuery: 'bio kraeutererde torffrei'
+                },
+                kueche: {
+                    text: '<strong>Ideal:</strong> Basilikum, Kresse, Schnittlauch & Keimsprossen auf der Fensterbank. <strong>Erde:</strong> Bio-Anzuchterde im kleinen Kräutertopf.',
+                    samenQuery: 'bio kuechenkraeuter samen set fensterbank',
+                    erdeQuery: 'bio anzuchterde kraeuter'
+                },
+                wohnzimmer: {
+                    text: '<strong>Ideal:</strong> Bogenhanf, Monstera oder Grünlilie für ruhiges Raumgefühl. <strong>Erde:</strong> Strukturstabile Bio-Grünpflanzenerde.',
+                    samenQuery: 'zimmerpflanzen pflegeset und duenger bio',
+                    erdeQuery: 'bio gruenpflanzenerde torffrei'
+                }
+            };
+
+            const data = spots[spot] || spots.balkon_sonne;
+            box.innerHTML = data.text;
+            if (samenLink) {
+                samenLink.href = buildAmazonLink(data.samenQuery);
+                samenLink.onclick = (e) => handleAffiliateClick(e, data.samenQuery);
+            }
+            if (erdeLink) {
+                erdeLink.href = buildAmazonLink(data.erdeQuery);
+                erdeLink.onclick = (e) => handleAffiliateClick(e, data.erdeQuery);
+            }
+        }
+        // --- 4. URLAUBSSITTER & GIESSPLAN ---
+        function buildSitterPlanText() {
+            const days = (document.getElementById('sitter-days').value || '').trim() || '7 Tage';
+            const plants = (document.getElementById('sitter-plants').value || '').trim() || 'Kräuter, Balkon- & Zimmerpflanzen';
+            const name = userNickname || 'Mein Zuhause';
+
+            return `🌿 GreenGuard Gießplan (${name} · ${days})\n• Pflanzen: ${plants}\n• Regel 1: Vor dem Gießen immer Fingerprobe in die Erde machen.\n• Regel 2: Kein Wasser im Untersetzer stehen lassen.\n• Regel 3: Kräuter & Balkon bei Wärme morgens oder abends gießen.`;
+        }
+
+        function updateSitterPreview() {
+            const box = document.getElementById('sitter-plan-box');
+            if (box) box.innerText = buildSitterPlanText();
+        }
+
+        function generateAndCopySitterPlan() {
+            const text = buildSitterPlanText();
+            const box = document.getElementById('sitter-plan-box');
+            if (box) box.innerText = text;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).catch(() => {});
+            }
+            awardCommunityPoints(10, 'Urlaubs-Gießplan erstellt');
+        }
 
         function saveNickname() {
             const input = document.getElementById('nickname-input').value.trim();
@@ -563,6 +807,7 @@
                 updateDashboard();
                 renderHabits();
                 updateCommunityUI();
+                updateSitterPreview();
             } else {
                 alert("Bitte gib einen Nickname ein!");
             }
@@ -579,6 +824,15 @@
             renderHabits();
             updateDashboard();
             updateCommunityUI();
+            calculateRepot();
+            selectEmergency('muecken');
+            updateSeedRecommendation();
+            updateSitterPreview();
+
+            const daysInput = document.getElementById('sitter-days');
+            const plantsInput = document.getElementById('sitter-plants');
+            if (daysInput) daysInput.addEventListener('input', updateSitterPreview);
+            if (plantsInput) plantsInput.addEventListener('input', updateSitterPreview);
         };
 
         function toggleHabit(index) {
@@ -651,13 +905,6 @@
                 statusText.innerText = "Ökosystem (Max) 🌳";
             }
         }
-
-        function openModal() {
-            document.getElementById('reward-modal').classList.remove('hidden');
-        }
-        function closeModal() {
-            document.getElementById('reward-modal').classList.add('hidden');
-        }
     </script>
 </body>
-                </html>
+</html>
