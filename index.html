@@ -12,15 +12,36 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: { eco: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 800: '#166534', 900: '#14532d', 950: '#052e16' } }
+                    colors: {
+                        eco: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16'
+                        }
+                    }
                 }
             }
         }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #052e16; color: #f0fdf4; overflow-x: hidden; }
-        .glass { background: rgba(20, 83, 45, 0.45); backdrop-filter: blur(16px); border: 1px solid rgba(134, 239, 172, 0.2); }
-        .glass:hover { background: rgba(20, 83, 45, 0.65); }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #052e16;
+            color: #f0fdf4;
+            overflow-x: hidden;
+        }
+        .glass {
+            background: rgba(20, 83, 45, 0.45);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(134, 239, 172, 0.2);
+        }
+        .glass:hover {
+            background: rgba(20, 83, 45, 0.65);
+        }
     </style>
 </head>
 <body class="h-full flex flex-col bg-gradient-to-br from-eco-950 via-eco-900 to-emerald-950 text-eco-50">
@@ -32,58 +53,67 @@
                 <i class="fa-solid fa-seedling"></i>
             </div>
             <h2 class="text-2xl font-bold text-white">Willkommen bei GreenGuard</h2>
-            <p class="text-xs text-eco-200 mt-2">Gib deinem grünen Zuhause einen Namen und starte dein Abenteuer!</p>
+            <p class="text-xs text-eco-200 mt-2">Gib deinem grünen Zuhause einen Namen, sammle Community-Punkte und starte deine Reise ohne Eile.</p>
             <input type="text" id="nickname-input" placeholder="Dein Nickname / Zuhause..." class="w-full mt-6 bg-eco-950/80 border border-eco-700 text-white text-sm rounded-xl p-3.5 text-center focus:outline-none focus:border-eco-400">
             <button onclick="saveNickname()" class="mt-4 w-full bg-gradient-to-r from-eco-600 to-emerald-500 text-white font-semibold py-3.5 rounded-xl shadow-lg cursor-pointer">🌱 Abenteuer starten!</button>
         </div>
     </div>
 
     <!-- Header -->
-    <header class="w-full glass border-b border-eco-800/50 sticky top-0 z-40 px-6 py-4 flex items-center justify-between">
+    <header class="w-full glass border-b border-eco-800/50 sticky top-0 z-40 px-4 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-3">
         <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-eco-600 to-eco-400 flex items-center justify-center text-white font-bold text-xl"><i class="fa-solid fa-leaf"></i></div>
+            <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-eco-600 to-eco-400 flex items-center justify-center text-white font-bold text-xl">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
             <div>
-                <h1 class="text-xl font-bold text-white flex items-center gap-2">GreenGuard <span id="user-title-tag" class="text-xs px-2 py-0.5 rounded-full bg-eco-500/20 text-eco-300 border border-eco-500/30">Zuhause</span></h1>
-                <p class="text-xs text-eco-300">Dein gesundes Zuhause</p>
+                <h1 class="text-xl font-bold text-white flex items-center gap-2 flex-wrap">
+                    GreenGuard
+                    <span id="user-title-tag" class="text-xs px-2 py-0.5 rounded-full bg-eco-500/20 text-eco-300 border border-eco-500/30">Zuhause</span>
+                    <span id="community-level-badge" class="text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-200 border border-emerald-400/30">Level 1 · Setzling-Freund</span>
+                </h1>
+                <p class="text-xs text-eco-300">Dein gesundes Zuhause · <span id="community-points-header" class="font-semibold text-emerald-300">0 Community-Punkte</span></p>
             </div>
         </div>
-        <button onclick="openModal()" class="bg-gradient-to-r from-eco-600 to-emerald-500 text-white text-xs font-semibold px-4 py-2 rounded-xl shadow-lg cursor-pointer"><i class="fa-solid fa-video"></i> Community & Video</button>
+        <button onclick="openModal()" class="bg-gradient-to-r from-eco-600 to-emerald-500 text-white text-xs font-semibold px-4 py-2 rounded-xl shadow-lg cursor-pointer">
+            <i class="fa-solid fa-video"></i> Community & Video
+        </button>
     </header>
 
     <!-- Main Content -->
     <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 overflow-y-auto">
+        <!-- Linke Spalte -->
         <section class="lg:col-span-7 flex flex-col gap-6">
-            
-            <!-- 🎬 9:16 Willkommens- & Visions-Video Banner -->
+
+            <!-- 9:16 Willkommens- & Visions-Video Banner -->
             <div class="glass rounded-3xl p-6 shadow-2xl border-emerald-500/30 relative overflow-hidden flex flex-col sm:flex-row items-center gap-6">
                 <div class="w-full sm:w-1/3 aspect-[9/16] max-h-56 bg-eco-950/80 rounded-2xl border border-eco-500/40 flex flex-col items-center justify-center p-4 text-center relative shadow-inner">
                     <div class="w-12 h-12 rounded-full bg-eco-600/50 text-white flex items-center justify-center mb-2 shadow-md">
                         <i class="fa-solid fa-play text-sm"></i>
                     </div>
                     <span class="text-[11px] font-bold text-white">9:16 Intro-Video</span>
-                    <span class="text-[9px] text-eco-300 mt-1">Die Vision deines gesunden Zuhauses</span>
+                    <span class="text-[9px] text-eco-300 mt-1">Balkon, Wohnung & Kräuter in Harmonie</span>
                 </div>
                 <div class="flex-1 text-center sm:text-left">
                     <span class="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full border border-emerald-500/30">Vision & Auftakt</span>
                     <h3 class="text-lg font-bold text-white mt-2">Das atmende Ökosystem</h3>
                     <p class="text-xs text-eco-200 mt-1 leading-relaxed">
-                        Erlebe im kurzen Intro, wie du Schritt für Schritt dein Zuhause in eine grüne Oase verwandelst, Punkte sammelst und Teil unserer Community wirst.
+                        Entdecke, wie du mit Pflanzen, Kräutern und kleinen täglichen Routinen Balkon und Wohnung belebst, Community-Punkte sammelst und Schritt für Schritt dein grünes Zuhause aufbaust.
                     </p>
-                    <a href="https://www.tiktok.com" target="_blank" class="mt-4 inline-block bg-gradient-to-r from-eco-600 to-emerald-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-lg">
-                        📺 Auf TikTok ansehen
+                    <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" onclick="awardCommunityPoints(5, 'TikTok-Intro geöffnet')" class="mt-4 inline-block bg-gradient-to-r from-eco-600 to-emerald-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-lg">
+                        📺 Auf TikTok ansehen (+5 Pkt)
                     </a>
                 </div>
             </div>
 
             <!-- Status Card -->
             <div class="glass rounded-3xl p-6 shadow-2xl flex flex-col justify-between">
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center gap-4">
                     <div>
                         <span class="text-xs font-semibold uppercase tracking-wider text-eco-400 bg-eco-900/80 px-3 py-1 rounded-full border border-eco-700/40">Zuhause Status</span>
                         <h2 class="text-2xl font-bold text-white mt-2">Atmendes Ökosystem</h2>
                     </div>
                     <div class="bg-eco-900/50 p-4 rounded-2xl border border-eco-800/60 text-right">
-                        <div class="text-xs text-eco-300">Score</div>
+                        <div class="text-xs text-eco-300">Tages-Score</div>
                         <div class="text-3xl font-extrabold text-white"><span id="score-display">0</span><span class="text-sm text-eco-400">/100</span></div>
                     </div>
                 </div>
@@ -98,49 +128,186 @@
                 </div>
 
                 <div class="grid grid-cols-3 gap-3 pt-2 border-t border-eco-800/40 text-center">
-                    <div class="p-2 rounded-xl bg-eco-900/40"><div class="text-xs text-eco-400">CO₂</div><div id="stat-co2" class="text-sm font-bold text-white">0.0 kg</div></div>
-                    <div class="p-2 rounded-xl bg-eco-900/40"><div class="text-xs text-eco-400">Sauerstoff</div><div id="stat-oxygen" class="text-sm font-bold text-white">+0%</div></div>
-                    <div class="p-2 rounded-xl bg-eco-900/40"><div class="text-xs text-eco-400">Habits</div><div id="stat-habits" class="text-sm font-bold text-white">0 / 5</div></div>
+                    <div class="p-2 rounded-xl bg-eco-900/40">
+                        <div class="text-xs text-eco-400">CO₂</div>
+                        <div id="stat-co2" class="text-sm font-bold text-white">0.0 kg</div>
+                    </div>
+                    <div class="p-2 rounded-xl bg-eco-900/40">
+                        <div class="text-xs text-eco-400">Sauerstoff</div>
+                        <div id="stat-oxygen" class="text-sm font-bold text-white">+0%</div>
+                    </div>
+                    <div class="p-2 rounded-xl bg-eco-900/40">
+                        <div class="text-xs text-eco-400">Habits</div>
+                        <div id="stat-habits" class="text-sm font-bold text-white">0 / 5</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Die 3 cleveren Blöcke mit Affiliate & Nutzen -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="glass rounded-2xl p-4 border-emerald-500/30 flex flex-col justify-between">
-                    <div>
-                        <span class="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full">Schlafzimmer</span>
-                        <h4 class="text-sm font-bold text-white mt-2">Bogenhanf</h4>
-                        <p class="text-[11px] text-eco-200 mt-1">Filtert Schadstoffe & produziert nachts Sauerstoff.</p>
+            <!-- Die 3 cleveren Blöcke mit Amazon-PartnerNet-Links (greenguard21-21) -->
+            <div>
+                <div class="flex items-center justify-between mb-2 px-1">
+                    <span class="text-xs font-semibold text-eco-200">Ausgewählte Begleiter für Raum & Balkon</span>
+                    <span class="text-[10px] text-emerald-300 bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-700/50">Werbung · Affiliate-Links</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="glass rounded-2xl p-4 border-emerald-500/30 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full">Schlafzimmer</span>
+                            <h4 class="text-sm font-bold text-white mt-2">Bogenhanf</h4>
+                            <p class="text-[11px] text-eco-200 mt-1">Robust & pflegeleicht; wenig gießen, Staunässe vermeiden.</p>
+                        </div>
+                        <a data-amazon-query="bogenhanf ton uebertopf" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'bogenhanf ton uebertopf')" class="mt-4 block text-center bg-eco-700 hover:bg-eco-600 text-white text-[11px] font-semibold py-2 rounded-xl">
+                            🛒 Ton-Topf Set* (+5 Pkt)
+                        </a>
                     </div>
-                    <a href="https://www.amazon.de/s?k=bogenhanf+ton+uebertopf" target="_blank" class="mt-4 block text-center bg-eco-700 hover:bg-eco-600 text-white text-[11px] font-semibold py-2 rounded-xl">🛒 Ton-Topf Set</a>
+
+                    <div class="glass rounded-2xl p-4 border-emerald-500/30 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full">Wohnzimmer</span>
+                            <h4 class="text-sm font-bold text-white mt-2">Monstera</h4>
+                            <p class="text-[11px] text-eco-200 mt-1">Helles indirektes Licht; Erde antrocknen lassen und Blätter abwischen.</p>
+                        </div>
+                        <a data-amazon-query="bodenfeuchtigkeitsmesser pflanzen" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'bodenfeuchtigkeitsmesser pflanzen')" class="mt-4 block text-center bg-eco-700 hover:bg-eco-600 text-white text-[11px] font-semibold py-2 rounded-xl">
+                            🛒 Gießanzeiger* (+5 Pkt)
+                        </a>
+                    </div>
+
+                    <div class="glass rounded-2xl p-4 border-emerald-500/30 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full">Küche & Balkon</span>
+                            <h4 class="text-sm font-bold text-white mt-2">Kräuter & Tomaten</h4>
+                            <p class="text-[11px] text-eco-200 mt-1">Frischer Duft & Eigenbedarf; sonniger Platz und regelmäßiges Ernten.</p>
+                        </div>
+                        <a data-amazon-query="bio kraeuter erde" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'bio kraeuter erde')" class="mt-4 block text-center bg-eco-700 hover:bg-eco-600 text-white text-[11px] font-semibold py-2 rounded-xl">
+                            🛒 Bio-Erde Set* (+5 Pkt)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neu: Balkon, Wohnung, Kräuter & Pflege-Guides -->
+            <div class="glass rounded-3xl p-6 shadow-2xl border-emerald-500/30">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">Wissen & Pflege</span>
+                        <h3 class="text-lg font-bold text-white mt-1">Balkon, Wohnung & Kräuter im Überblick</h3>
+                    </div>
+                    <span id="guide-feedback" class="text-xs text-emerald-300 font-medium"></span>
                 </div>
 
-                <div class="glass rounded-2xl p-4 border-emerald-500/30 flex flex-col justify-between">
-                    <div>
-                        <span class="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full">Wohnzimmer</span>
-                        <h4 class="text-sm font-bold text-white mt-2">Monstera</h4>
-                        <p class="text-[11px] text-eco-200 mt-1">Der Dschungel-Klassiker für ideales Raumklima.</p>
+                <div class="space-y-3 text-xs">
+                    <div class="p-4 rounded-2xl bg-eco-950/60 border border-eco-800/60">
+                        <div class="flex items-center justify-between gap-2">
+                            <h4 class="font-bold text-white text-sm">🌿 Kräuter & Balkon verschönern</h4>
+                            <button onclick="completeGuide('kraeuter', 15)" class="bg-eco-700 hover:bg-eco-600 text-white px-3 py-1.5 rounded-xl font-semibold cursor-pointer">
+                                Gelesen (+15 Pkt)
+                            </button>
+                        </div>
+                        <p class="text-eco-200 mt-2 leading-relaxed">
+                            <strong>Nutzen:</strong> Rosmarin, Thymian, Minze und Basilikum bringen Duft, Ruhe und frische Aromen direkt in deinen Alltag. <strong>Worauf achten:</strong> Genug Licht, Abflusslöcher im Topf und Triebspitzen regelmäßig ernten, statt Blüten zu schnell stehen zu lassen.
+                        </p>
+                        <a data-amazon-query="balkon kraeuter pflanzkasten" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'balkon kraeuter pflanzkasten')" class="mt-2 inline-block text-emerald-300 hover:text-emerald-200 underline">
+                            Passendes Zubehör auf Amazon ansehen* (Werbung)
+                        </a>
                     </div>
-                    <a href="https://www.amazon.de/s?k=bodenfeuchtigkeitsmesser+pflanzen" target="_blank" class="mt-4 block text-center bg-eco-700 hover:bg-eco-600 text-white text-[11px] font-semibold py-2 rounded-xl">🛒 Gießanzeiger</a>
-                </div>
 
-                <div class="glass rounded-2xl p-4 border-emerald-500/30 flex flex-col justify-between">
-                    <div>
-                        <span class="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full">Küche & Balkon</span>
-                        <h4 class="text-sm font-bold text-white mt-2">Kräuter / Tomaten</h4>
-                        <p class="text-[11px] text-eco-200 mt-1">Frische Ernte direkt für den täglichen Eigenbedarf.</p>
+                    <div class="p-4 rounded-2xl bg-eco-950/60 border border-eco-800/60">
+                        <div class="flex items-center justify-between gap-2">
+                            <h4 class="font-bold text-white text-sm">🏡 Wohnung gestalten & Raumgefühl</h4>
+                            <button onclick="completeGuide('wohnung', 15)" class="bg-eco-700 hover:bg-eco-600 text-white px-3 py-1.5 rounded-xl font-semibold cursor-pointer">
+                                Gelesen (+15 Pkt)
+                            </button>
+                        </div>
+                        <p class="text-eco-200 mt-2 leading-relaxed">
+                            <strong>Nutzen:</strong> Grüne Ecken und warme Lichtquellen beruhigen den Blick und machen Räume wohnlicher. <strong>Worauf achten:</strong> Pflanzen passend zum Licht (hell, Halbschatten oder schattiger) stellen und nicht direkt neben heiße Heizkörper oder kalte Zugluft quetschen.
+                        </p>
+                        <a data-amazon-query="zimmerpflanzen ständer warmweiss" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'zimmerpflanzen ständer warmweiss')" class="mt-2 inline-block text-emerald-300 hover:text-emerald-200 underline">
+                            Passende Wohn-Ideen auf Amazon ansehen* (Werbung)
+                        </a>
                     </div>
-                    <a href="https://www.amazon.de/s?k=bio+kraeuter+erde" target="_blank" class="mt-4 block text-center bg-eco-700 hover:bg-eco-600 text-white text-[11px] font-semibold py-2 rounded-xl">🛒 Bio-Erde Set</a>
+
+                    <div class="p-4 rounded-2xl bg-eco-950/60 border border-eco-800/60">
+                        <div class="flex items-center justify-between gap-2">
+                            <h4 class="font-bold text-white text-sm">💧 Pflege-Check: Gießen, Erde & Licht</h4>
+                            <button onclick="completeGuide('pflege', 15)" class="bg-eco-700 hover:bg-eco-600 text-white px-3 py-1.5 rounded-xl font-semibold cursor-pointer">
+                                Gelesen (+15 Pkt)
+                            </button>
+                        </div>
+                        <p class="text-eco-200 mt-2 leading-relaxed">
+                            <strong>Worauf achten:</strong> Zu viel Wasser ist im Topf häufiger ein Problem als ein kurzer trockener Moment – immer Fingerprobe in der Erde machen, Überschusswasser aus dem Untersetzer gießen und Staub von Blättern wischen, damit sie Licht aufnehmen können.
+                        </p>
+                        <a data-amazon-query="giesskanne schmaler ausguss" href="#" target="_blank" rel="noopener noreferrer" onclick="handleAffiliateClick(event, 'giesskanne schmaler ausguss')" class="mt-2 inline-block text-emerald-300 hover:text-emerald-200 underline">
+                            Pflege-Helfer auf Amazon ansehen* (Werbung)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neu: 9:16 Erklärvideos -->
+            <div class="glass rounded-3xl p-6 shadow-2xl border-emerald-500/30">
+                <span class="text-[10px] uppercase tracking-wider text-emerald-300 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">Kurz-Clips (9:16)</span>
+                <h3 class="text-lg font-bold text-white mt-1 mb-3">Erklärvideos für Balkon, Wohnung & Pflanzen</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                    <div class="p-3.5 rounded-2xl bg-eco-950/60 border border-eco-800/60 flex flex-col justify-between">
+                        <div>
+                            <div class="font-bold text-white">1. Balkon in Ruhe gestalten</div>
+                            <p class="text-eco-300 mt-1 text-[11px]">Ideen für kleine Flächen, Sitzplatz & grüne Akzente.</p>
+                        </div>
+                        <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" onclick="awardCommunityPoints(10, 'Clip 1 angesehen')" class="mt-3 inline-block text-center bg-eco-800 hover:bg-eco-700 text-white py-2 rounded-xl font-semibold">
+                            ▶ Clip öffnen (+10 Pkt)
+                        </a>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-eco-950/60 border border-eco-800/60 flex flex-col justify-between">
+                        <div>
+                            <div class="font-bold text-white">2. Wohnung gemütlich beleben</div>
+                            <p class="text-eco-300 mt-1 text-[11px]">Worauf es bei Licht, Standorten und Harmonie ankommt.</p>
+                        </div>
+                        <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" onclick="awardCommunityPoints(10, 'Clip 2 angesehen')" class="mt-3 inline-block text-center bg-eco-800 hover:bg-eco-700 text-white py-2 rounded-xl font-semibold">
+                            ▶ Clip öffnen (+10 Pkt)
+                        </a>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-eco-950/60 border border-eco-800/60 flex flex-col justify-between">
+                        <div>
+                            <div class="font-bold text-white">3. Kräuter richtig pflegen</div>
+                            <p class="text-eco-300 mt-1 text-[11px]">Gießen, zurückschneiden und typische Pflegefehler vermeiden.</p>
+                        </div>
+                        <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" onclick="awardCommunityPoints(10, 'Clip 3 angesehen')" class="mt-3 inline-block text-center bg-eco-800 hover:bg-eco-700 text-white py-2 rounded-xl font-semibold">
+                            ▶ Clip öffnen (+10 Pkt)
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Right Column: Habit Tracker -->
+        <!-- Rechte Spalte: Smart Habit Tracker & Community-Punkte -->
         <section class="lg:col-span-5 flex flex-col gap-6">
             <div class="glass rounded-3xl p-6 shadow-2xl flex-1 flex flex-col justify-between">
                 <div>
-                    <h3 class="text-xl font-bold text-white mb-4">Smart Habit Tracker</h3>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <h3 class="text-xl font-bold text-white">Smart Habit Tracker</h3>
+                        <button onclick="resetDailyHabits()" class="text-xs bg-eco-900/80 hover:bg-eco-800 text-eco-200 border border-eco-700/50 px-3 py-1.5 rounded-xl cursor-pointer">
+                            Neuer Tag
+                        </button>
+                    </div>
                     <div id="habit-list" class="space-y-3"></div>
+                </div>
+
+                <!-- Community-Fortschritt & Hinweis -->
+                <div class="mt-6 pt-4 border-t border-eco-800/50 space-y-3">
+                    <div class="p-4 rounded-2xl bg-eco-950/70 border border-emerald-500/30">
+                        <div class="flex items-center justify-between text-xs mb-1">
+                            <span class="font-bold text-white">🏆 Community-Fortschritt</span>
+                            <span id="community-points-card" class="font-extrabold text-emerald-300">0 Pkt</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-eco-900 rounded-full overflow-hidden my-2">
+                            <div id="community-progress-bar" class="h-full bg-gradient-to-r from-eco-500 to-emerald-300 transition-all duration-300" style="width: 0%"></div>
+                        </div>
+                        <p id="community-next-level-text" class="text-[11px] text-eco-300">Noch 50 Punkte bis Level 2 (Balkon-Entdecker)</p>
+                    </div>
+
+                    <p class="text-[11px] text-eco-300 leading-relaxed">
+                        <strong>*Transparenz- & Affiliate-Hinweis (Werbung):</strong> Links mit <code class="text-emerald-300">tag=greenguard21-21</code> führen zu Amazon.de. Wenn du dort einkaufst, erhalte ich eine kleine Provision – für dich bleibt der Preis gleich. Freiwillige Unterstützung ist jederzeit willkommen, aber kein Muss.
+                    </p>
                 </div>
             </div>
         </section>
@@ -149,13 +316,13 @@
     <!-- Community & Video Modal -->
     <div id="reward-modal" class="fixed inset-0 bg-eco-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="glass max-w-md w-full rounded-3xl p-6 shadow-2xl text-center relative">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-eco-300 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-eco-300 hover:text-white text-lg cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
             <div class="w-14 h-14 bg-gradient-to-tr from-eco-600 to-emerald-400 rounded-2xl mx-auto flex items-center justify-center text-white text-xl shadow-lg mb-3">
                 <i class="fa-solid fa-video"></i>
             </div>
             <h3 class="text-xl font-bold text-white mb-2">Community & Video-Challenge</h3>
             <p class="text-xs text-eco-200 mb-4 leading-relaxed">
-                Schicke dein Pflanzen-Video auf TikTok oder YouTube ein! 
+                Zeige deinen Balkon, deine Wohnung oder deine Pflanzen & Kräuter auf TikTok oder YouTube!
                 <br><strong class="text-emerald-300">Anti-Schummel-Regel:</strong> Lege unbedingt einen handgeschriebenen Zettel mit deinem Nickname und dem aktuellen Datum zu deiner Pflanze, um am Gewinnspiel teilzunehmen!
             </p>
             <button onclick="closeModal()" class="w-full bg-eco-600 text-white py-3 rounded-xl text-sm font-semibold cursor-pointer">Verstanden! ❤️</button>
@@ -164,11 +331,15 @@
 
     <!-- Script Logic -->
     <script>
+        const AMAZON_TAG = 'greenguard21-21';
+
         let userNickname = localStorage.getItem('greenguard_nickname') || '';
-        let currentScore = parseInt(localStorage.getItem('greenguard_score')) || 0;
+        let currentScore = parseInt(localStorage.getItem('greenguard_score'), 10) || 0;
         let co2Saved = parseFloat(localStorage.getItem('greenguard_co2')) || 0.0;
-        let oxygenIndex = parseInt(localStorage.getItem('greenguard_oxygen')) || 0;
-        
+        let oxygenIndex = parseInt(localStorage.getItem('greenguard_oxygen'), 10) || 0;
+        let communityPoints = parseInt(localStorage.getItem('greenguard_community_points'), 10) || 0;
+        let completedGuides = JSON.parse(localStorage.getItem('greenguard_guides')) || {};
+
         let habits = JSON.parse(localStorage.getItem('greenguard_habits')) || [
             { text: "5 Min. Stoßlüften & Frischluft", points: 20, completed: false },
             { text: "Kräuter & Pflanzen bewässern", points: 25, completed: false },
@@ -177,22 +348,117 @@
             { text: "Bio-Erde / Samen einpflanzen", points: 20, completed: false }
         ];
 
+        function buildAmazonLink(queryText) {
+            const params = new URLSearchParams({
+                k: queryText,
+                tag: AMAZON_TAG
+            });
+            return `https://www.amazon.de/s?${params.toString()}`;
+        }
+
+        function applyAmazonLinks() {
+            const links = document.querySelectorAll('a[data-amazon-query]');
+            links.forEach((link) => {
+                const q = link.getAttribute('data-amazon-query');
+                if (q) {
+                    link.href = buildAmazonLink(q);
+                }
+            });
+        }
+
+        function saveState() {
+            localStorage.setItem('greenguard_score', String(currentScore));
+            localStorage.setItem('greenguard_co2', String(co2Saved));
+            localStorage.setItem('greenguard_oxygen', String(oxygenIndex));
+            localStorage.setItem('greenguard_community_points', String(communityPoints));
+            localStorage.setItem('greenguard_habits', JSON.stringify(habits));
+            localStorage.setItem('greenguard_guides', JSON.stringify(completedGuides));
+        }
+
+        function awardCommunityPoints(pts, reason) {
+            communityPoints += pts;
+            saveState();
+            updateCommunityUI();
+            const feedback = document.getElementById('guide-feedback');
+            if (feedback && reason) {
+                feedback.innerText = `+${pts} Pkt (${reason})`;
+            }
+        }
+
+        function handleAffiliateClick(event, queryText) {
+            const url = buildAmazonLink(queryText);
+            if (event && event.currentTarget) {
+                event.currentTarget.href = url;
+            }
+            awardCommunityPoints(5, 'Amazon-Link geöffnet');
+        }
+
+        function completeGuide(guideId, pts) {
+            if (completedGuides[guideId]) {
+                const feedback = document.getElementById('guide-feedback');
+                if (feedback) feedback.innerText = 'Guide bereits als gelesen markiert.';
+                return;
+            }
+            completedGuides[guideId] = true;
+            awardCommunityPoints(pts, 'Guide gelesen');
+        }
+
+        function getCommunityLevel(pts) {
+            if (pts < 50) {
+                return { level: 1, title: 'Setzling-Freund', nextGoal: 50, prevGoal: 0, nextTitle: 'Balkon-Entdecker' };
+            }
+            if (pts < 120) {
+                return { level: 2, title: 'Balkon-Entdecker', nextGoal: 120, prevGoal: 50, nextTitle: 'Kräuter-Hüter' };
+            }
+            if (pts < 220) {
+                return { level: 3, title: 'Kräuter-Hüter', nextGoal: 220, prevGoal: 120, nextTitle: 'Harmonie-Meister' };
+            }
+            return { level: 4, title: 'Harmonie-Meister', nextGoal: 220, prevGoal: 120, nextTitle: 'Maximalstufe erreicht' };
+        }
+
+        function updateCommunityUI() {
+            const info = getCommunityLevel(communityPoints);
+            const badge = document.getElementById('community-level-badge');
+            const headerPts = document.getElementById('community-points-header');
+            const cardPts = document.getElementById('community-points-card');
+            const bar = document.getElementById('community-progress-bar');
+            const nextText = document.getElementById('community-next-level-text');
+
+            if (badge) badge.innerText = `Level ${info.level} · ${info.title}`;
+            if (headerPts) headerPts.innerText = `${communityPoints} Community-Punkte`;
+            if (cardPts) cardPts.innerText = `${communityPoints} Pkt`;
+
+            if (info.level === 4) {
+                if (bar) bar.style.width = '100%';
+                if (nextText) nextText.innerText = 'Höchstes Community-Level erreicht – danke für deine Ruhe & Kreativität!';
+            } else {
+                const span = info.nextGoal - info.prevGoal;
+                const progressInLevel = Math.max(0, communityPoints - info.prevGoal);
+                const pct = Math.min(100, Math.round((progressInLevel / span) * 100));
+                if (bar) bar.style.width = `${pct}%`;
+                const remaining = Math.max(0, info.nextGoal - communityPoints);
+                if (nextText) nextText.innerText = `Noch ${remaining} Punkte bis Level ${info.level + 1} (${info.nextTitle})`;
+            }
+        }
+
         function saveNickname() {
             const input = document.getElementById('nickname-input').value.trim();
-            if(input) {
+            if (input) {
                 userNickname = input;
                 localStorage.setItem('greenguard_nickname', userNickname);
                 document.getElementById('user-title-tag').innerText = userNickname;
                 document.getElementById('onboarding-modal').classList.add('hidden');
                 updateDashboard();
                 renderHabits();
+                updateCommunityUI();
             } else {
                 alert("Bitte gib einen Nickname ein!");
             }
         }
 
         window.onload = function() {
-            if(!userNickname) {
+            applyAmazonLinks();
+            if (!userNickname) {
                 document.getElementById('onboarding-modal').classList.remove('hidden');
             } else {
                 document.getElementById('user-title-tag').innerText = userNickname;
@@ -200,6 +466,7 @@
             }
             renderHabits();
             updateDashboard();
+            updateCommunityUI();
         };
 
         function toggleHabit(index) {
@@ -208,15 +475,23 @@
                 currentScore = Math.min(100, currentScore + habits[index].points);
                 co2Saved += 1.2;
                 oxygenIndex += 5;
+                communityPoints += 10;
             } else {
                 currentScore = Math.max(0, currentScore - habits[index].points);
                 co2Saved = Math.max(0, co2Saved - 1.2);
                 oxygenIndex = Math.max(0, oxygenIndex - 5);
+                communityPoints = Math.max(0, communityPoints - 10);
             }
-            localStorage.setItem('greenguard_score', currentScore);
-            localStorage.setItem('greenguard_co2', co2Saved);
-            localStorage.setItem('greenguard_oxygen', oxygenIndex);
-            localStorage.setItem('greenguard_habits', JSON.stringify(habits));
+            saveState();
+            renderHabits();
+            updateDashboard();
+            updateCommunityUI();
+        }
+
+        function resetDailyHabits() {
+            habits = habits.map((h) => ({ ...h, completed: false }));
+            currentScore = 0;
+            saveState();
             renderHabits();
             updateDashboard();
         }
@@ -250,14 +525,27 @@
             document.getElementById('stat-oxygen').innerText = `+${oxygenIndex}%`;
             const icon = document.getElementById('tree-icon');
             const statusText = document.getElementById('tree-status-text');
-            if(currentScore < 20) { icon.className = "fa-solid fa-seedling text-6xl text-eco-400"; statusText.innerText = "Setzling (Stufe 0)"; }
-            else if(currentScore < 50) { icon.className = "fa-solid fa-spa text-6xl text-eco-400"; statusText.innerText = "Sprössling (Stufe 1)"; }
-            else if(currentScore < 80) { icon.className = "fa-solid fa-tree text-6xl text-eco-400"; statusText.innerText = "Lebensbaum (Stufe 2)"; }
-            else { icon.className = "fa-solid fa-globe text-6xl text-emerald-300"; statusText.innerText = "Ökosystem (Max) 🌳"; }
+            if (currentScore < 20) {
+                icon.className = "fa-solid fa-seedling text-6xl text-eco-400";
+                statusText.innerText = "Setzling (Stufe 0)";
+            } else if (currentScore < 50) {
+                icon.className = "fa-solid fa-spa text-6xl text-eco-400";
+                statusText.innerText = "Sprössling (Stufe 1)";
+            } else if (currentScore < 80) {
+                icon.className = "fa-solid fa-tree text-6xl text-eco-400";
+                statusText.innerText = "Lebensbaum (Stufe 2)";
+            } else {
+                icon.className = "fa-solid fa-globe text-6xl text-emerald-300";
+                statusText.innerText = "Ökosystem (Max) 🌳";
+            }
         }
 
-        function openModal() { document.getElementById('reward-modal').classList.remove('hidden'); }
-        function closeModal() { document.getElementById('reward-modal').classList.add('hidden'); }
+        function openModal() {
+            document.getElementById('reward-modal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('reward-modal').classList.add('hidden');
+        }
     </script>
 </body>
 </html>
