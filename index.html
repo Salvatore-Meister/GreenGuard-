@@ -86,13 +86,17 @@
 
             <!-- 9:16 Willkommens- & Visions-Video Banner -->
             <div class="glass rounded-3xl p-6 shadow-2xl border-emerald-500/30 relative overflow-hidden flex flex-col sm:flex-row items-center gap-6">
-                <div class="w-full sm:w-1/3 aspect-[9/16] max-h-56 bg-eco-950/80 rounded-2xl border border-eco-500/40 flex flex-col items-center justify-center p-4 text-center relative shadow-inner">
-                    <div class="w-12 h-12 rounded-full bg-eco-600/50 text-white flex items-center justify-center mb-2 shadow-md">
-                        <i class="fa-solid fa-play text-sm"></i>
-                    </div>
-                    <span class="text-[11px] font-bold text-white">9:16 Intro-Video</span>
-                    <span class="text-[9px] text-eco-300 mt-1">Balkon, Wohnung & Kräuter in Harmonie</span>
+                <div class="w-full sm:w-1/3 aspect-[9/16] max-h-64 bg-eco-950/80 rounded-2xl border border-eco-500/40 overflow-hidden shadow-inner">
+    <video
+        src="./lv_0_2026112317530.mp4"
+        controls
+        playsinline
+        preload="metadata"
+        onplay="awardCommunityPointsOnce('video_intro', 5, 'Intro-Video gestartet')"
+        class="w-full h-full object-cover">
+    </video>
                 </div>
+                
                 <div class="flex-1 text-center sm:text-left">
                     <span class="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full border border-emerald-500/30">Vision & Auftakt</span>
                     <h3 class="text-lg font-bold text-white mt-2">Das atmende Ökosystem</h3>
